@@ -1,0 +1,263 @@
+Thermosolutal mixed convection in a lid-driven irregular hexagon cavity filled with MWCNT-MgO (15%-85%)/CMC non-Newtonian hybrid nanofluid
+
+Nihal TOUDJA1*, Nabila LABSI1, Youb Khaled BENKAHLA1, Seif-Eddine OUYAHIA1, Mahdi BENZEMA1
+
+1Laboratory of Transport Phenomena, Faculty of Mechanical and Process Engineering, USTHB, B.P. 32, El-Alia Bab-Ezzouar, 16111 Algiers, Algeria
+E-mail (*nihale.toudja@gmail.com)
+
+ABSTRACT
+	Mixed convection heat and mass transfer of a hybrid nanofluid in a lid-driven irregular hexagon cavity is numerically studied in the present paper. The nanofluid is made of the multi-walled carbon nanotube (MWCNT) and the magnesium oxide (MgO) nanoparticles (15-85 vol %) dispersed in non-Newtonian carboxymethyl cellulose (CMC) base fluid obeying the Ostwald de Waele rheological model. The governing equations are solved numerically, applying the finite volume method employing the SIMPLER algorithm for the velocity-pressure coupling. This present study is performed for some relevant physical parameters, namely, the Richardson number (Ri = 0.001-10), the power-law index (n = 0.2-1.0), the buoyancy ratio (N = -3 to +3) and the total solid volume fraction (ϕ = 0.0-0.02). The results from the numerical simulations are presented in streamlines, isotherms, isoconcentrations forms, velocity profiles, local Nusselt and Sherwood numbers, and average Sherwood and Nusselt numbers. This work proves the significant impact of the quoted parameters on the hydrodynamic, thermal, and mass fields. Results indicate that the flow structure is more sensitive to both Richardson and power law index variations. Moreover, heat and mass transfer are enhanced by the declines of the Richardson number. It is also observed that the heat transfer improve with the insertion of nanoparticles regardless the values of the Richardson number, the power law index and the buoyancy ratio. Also, the mass transfer enhance by the addition of nanoparticles for the case of a dominant forced convection (Ri = 0.01, 0.001) and decreases it for the case of mixed and dominant natural convection (Ri = 1, 10), except for (N = 2, 3), where the mass transfer increases.
+
+Keywords Mixed convection; Thermosolutal; Lid-driven irregular hexagon cavity; MWCNT-MgO/CMC non-Newtonian hybrid nanofluid; Finite volume method
+
+Nomenclature
+cp	heat capacity (J kg - 1 K- 1)
+C	concentration (kg m-3)
+D	mass diffusivity (m2 s-1)
+g	gravitational acceleration (m s-2)
+Gr	Grashof number
+k	thermal conductivity (W m-1 K-1)
+K	consistency coefficient (Pa sn )
+L	length of the cavity (m)
+Le	Lewis number
+n	power law index
+N	buoyancy ratio
+Nu	Nusselt number
+Nuavg	average Nusselt number
+p	pressure (Pa)
+P	dimensionless pressure
+Pr	Prandtl number
+Re	Reynolds number
+Ri	Richardson number
+Sh	Sherwood number
+Shavg	average Sherwood number
+T	temperature (°C)
+u, v	velocity components (m s-1)
+U, V	dimensionless velocity components
+x, y	Cartesian coordinates (m)
+X, Y	dimensionless Cartesian coordinates 
+
+Greek letters
+α	thermal diffusivity (m2 s-1)
+β	thermal expansion coefficient (K-1)
+	shear rate (s-1)
+θ 	dimensionless temperature
+μ	dynamic viscosity (kg m-1 s-1)
+ν	kinematic viscosity (m2 s-1)
+ρ	density (kg m-3)
+τ	dimensionless shear stress
+φ 	dimensionless concentration 
+ϕ	volume fraction of nanoparticles
+ψ	stream function
+ω	angle (°)
+
+Subscripts
+avg	average
+C	cold
+f	base fluid
+H	hot
+l	left inclined wall
+nf	nanofluid 
+r	right inclined wall
+s	solid nanoparticle
+
+Superscript
+*	dimensional variables
+
+1. Introduction
+	Convective mass and heat transfer is a process of great importance in industry and technology fields, used in different industrial procedures such as: processor cooling and electronic components as well as radiators and heat exchangers.
+The improvement of convective mass and heat transfer is the main object of several works. Thus, compared to traditional heat transfer fluids (water, ethylene glycol …) [1], nanofluids are today considered as a new category of fluids, allowing to improve the thermal and mass performances of systems involving convective exchanges. Nanofluids offer many practical engineering applications, such as electronic components [2], engine cooling [3], systems producing nuclear energy and biomedicine [4], power generation, chemical production [5].Therefore, researchers have given a large interest to the study of thermophysical properties of nanofluids [6, 7, 8, 9].
+Several studies have been undertaken by considering, at first, a Newtonian base fluid. Ouyahia et al. [10] studied the thermal and hydrodynamic proprieties of titanium dioxide (TiO2) nanofluid inside a triangular enclosure. They noticed that the insertion of nanoparticles enhances the heat transfer. Additionally, the heat transfer increases by increasing the Rayleigh number. The mixed convection in a three dimensional cubic enclosure filled with CNT-water nanofluid has been investigated by Selimefendigil et al. [11].They concluded that the adding of CNT nanoparticles to the water enhance significantly the heat transfer. Benzema et al. [12] analyzed numerically the impact of orientation of magnetic field on Rayleigh-Bénard convection in a square enclosure filled with alumina-water nanofluid. The final results exhibit that the rise of the Hartmann number increases the heat transfer rate. Also, the insertion of nanoparticles increases heat transfer but just in the presence of a magnetic field. Boutra et al. [13] examined the free convection heat transfer of Ag-water nanofluid inside cubical enclosure with a bottom heat source. They found that the addition of the nanoparticles enhance the heat transfer rate and this latter rises by increasing the nanoparticles volume fraction. Selimefendigil and Oztop [14] studied the problem of forced convection of CuO-water nanofluid flow in a channel with circular cylinders. Selimefendigil and Oztop [15] investigated the mixed convection of CuO-water nanofluid in a vented cavity with magnetic field. They concluded that nanoparticles insertion enhance the average heat transfer in the range of 9-9.5% in the absence and presence of magnetic field.
+	Recently, a new type of nanofluids has attracted the attention of researchers, it is about the hybrid nanofluids obtained by dispersing two kinds of nanoparticles in a base fluid [16].Their possible applications can be in almost all the fields of heat transfer applications, because of the synergistic effect through which they provide favorable properties of all of its constituents. The hybrid nanofluids containing composite nanoparticles yield significant enhancement of thermal conductivity as well as heat transfer coefficient. Kasaeipoor et al. [17] analyzed the natural convection heat transfer and entropy generation in the cavity filled with MWCNT-MgO (15% - 85%)/water hybrid nanofluid. The final results illustrate that the rise of the nanoparticles volume fraction increases considerably the average Nusselt number, and then decreases. They also noticed that the rise of the Rayleigh number improved the total entropy generation and declines with rise of nanoparticle volume fraction. Kalidasan et al. [18] investigated the natural convection inside C-shaped open cavity containing an isothermal block and filled with Cu-TiO2/water hybrid nanofluid. They found that the rise in percentage of hybrid nanocomposites increases the heat transfer when Ra = 104 and 105.
+Other authors considered the case of the thermosolutal convection when dealing with nanofluids. Indeed, the Double-diffusive natural convection inside a square enclosure with a nanofluid composed with water base fluid and one of the following nanoparticles Cu, Ag, Al2O3 and TiO2, has been studied by Esfahani and Bordbar [19]. The authors noticed that the increase of the Rayleigh number and the nanoparticle volume fraction enhances the heat transfer rate and reduces the mass transfer rate. Abbasian Arani et al. [20] investigated the double-diffusive mixed convection in a lid-driven square cavity filled with alumina-water nanofluid. They showed that the average Nusselt number decreases by the increase of the nanoparticles volume fraction at high values of the Richardson number, and to its increase at low values of the latter. They noticed also that the average Sherwood number increase by decreasing the Richardson number. Parvin et al. [21] analyzed the double diffusive natural convection in a square cavity filled with alumina-water nanofluid. They showed that the mass and heat transfer rises by Soret and Dufour coefficients.
+	The dispersion of nanoparticles within a non-Newtonian base fluid has been the main issue of many industrial applications, for the purpose of analyzing the rheological comportment of this mixture and its potential applications. Wang et al. [22] studied the Double-diffusive convection of the power-law nanofluids in rectangular enclosure. They observed that the rise of the nanoparticles volume fraction improves heat transfer and reduces the mass transfer. They found also that mass and heat transfer decrease generally as the power law index increases. Kefayati [23] analyzed the mixed convection of non-Newtonian nanofluid using the Buongiorno’s mathematical model. He observed that the heat and mass transfer decreases when the Richardson number rises in different power-law indexes. The mixed convection of non-Newtonian nanofluids in a square two sided lid-driven cavity filled with water alumina-water nanofluid has been analyzed by Kefayati [24]. He noticed that for the different parameters used, the heat transfer exchange declines with the rise of the Richardson number. He also noticed that the insertion of nanoparticles increases heat transfer for various power-law indexes and Richardson numbers. Islami et al. [25] studied numerically heat transfer and fluid flow a non-Newtonian nanofluid (0.5 mass% carboxymethyl cellulose (CMC) and copper oxide (CuO) nanoparticles) in a two parallel plate microchannel without and with micromixers. They concluded that the addition of nanoparticles to both Newtonian and non-Newtonian base fluids conducts to rise the average Nusselt number and this rise is higher for a Newtonian base fluid. Selimefendigil and Chamkha [26] examined numerically the mixed convection in a lid driven triangular cavity filled with power law nanofluid. They observed that when the Richardson and Hartmann numbers enhances, the average heat transfer deteriorates. Ouyahia et al. [27] investigated the natural convection of a titanium dioxide (TiO2)-carbopol non-Newtonian nanofluid in a square cavity exposed to a constant and uniform heat flux. The base fluid follows the Herschel-Bulkley rheological model. They noticed that the heat transfer and the fluid flow enhances by the decrease of the power law by avoiding the formation of unyielded plugs, they also observed the existence of the critical value  of Herschel-Bulkley number beyond which there is no fluid flow and the heat transfer is purely conductive. Kefayati [28] numerically studied the mixed convection of non-Newtonian nanofluids in a lid-driven square cavity in the presence of magnetic field. He concluded that the heat transfer enhance with the insertion of nanoparticles for different studied parameters. Kefayati [29] analyzed laminar mixed convection of non-Newtonian nanofluids in a two sided lid driven enclosure in the presence of a horizontal magnetic field by finite difference Lattice Boltzmann method. It was found that the heat transfer deceases with the increases of the Richardson number. He also noticed that the addition of nanoparticles enhance heat transfer for various studied parameters. The mixed convection of non-Newtonian nanofluids in a square lid-driven encolsure with sinusoidal temperature profile analysed numerically by Kefayati [30] He found that the influence of nanoparticle on the enhancement of heat transfer declines with rises in power law index. He also noticed that when the Richardson number increases, the effect of nanoparticle decreases for various power law indexes. Ternik and Rudolf [31] analyzed the laminar natural convection in a square enclosure filled with Carboxymethyl Cellulose (CMC) as base fluid, and one of Au, Al2O3, Cu and TiO2 as nanoparticles. They concluded that the average Nusselt number rises according to the Rayleigh number for each nanoparticles types.
+	In order to contribute to the enrichment of this scientific field, we propose this study for which, we consider an enclosure of an irregular geometry. Thus, the principal objective of this study is to evaluate the impact of different physical parameters, namely, the Richardson number, the power law index, the buoyancy ratio and the total nanoparticles volume fraction, on the hydrodynamic, thermal and mass characteristics of MWCNT (multi-walled carbon nanotube ) – MgO (the magnesium oxide) / CMC (carboxymethyl cellulose )
+non-Newtonian hybrid nanofluid’s flow inside a lid-driven irregular hexagon cavity.
+	In the literature, as mentioned above, there are studies related to convection heat transfer of Newtonian hybrid nanofluid [17, 18], and some studies that analyzed the thermosolutal convection in a cavity filled with Newtonian nanofluid [19, 20] and non-Newtonian nanofluid [22]. The novelty of this study relates to the combination of geometric complexity, and the use of a hybrid nanofluid where the base fluid is non-Newtonian, and thermosolutal behavior in a single work with extensive visualization of the flow, heat and mass transfer characteristics.
+ 
+2. Physical model and mathematical formulation
+2.1. Physical model
+	We consider in the present study, an irregular hexagon cavity with a length L, filled with a homogeneous aqueous solution of carboxymethyl cellulose (CMC) / multi-walled carbon nanotube (MWCNT)-magnesium oxide (MgO) (15% - 85%) non-Newtonian hybrid nanofluid. The bottom parts of both right and left walls are inclined with an angle ω = 45° and maintained at high temperature and concentration (TH, CH). The top portions of these walls are kept at low temperature and concentration (TC, CC) whereas the remaining portions as well as the horizontal walls are adiabatic and impermeable. In addition, the horizontal top wall is driven from the left to the right with a constant translation velocity U0. The geometrical configuration as well as the hydrodynamic, thermal and solutal boundary conditions are presented on Fig. 1.
+
+2.2. Mathematical formulation
+	In this work, the flow is assumed to be two-dimensional steady, laminar and incompressible, for which, both radiation and viscous dissipation are neglected. It is supposed, in addition, that the nanoparticles (MWCNT-MgO) are in thermal equilibrium with the base non-Newtonian fluid. Also, all the nanofluid’s thermophysical properties, are supposed to be constant except for the density for which, the Boussinesq approximation is adopted. It is also assumed that the Soret and Dufour parameters are neglected.
+Table 1 summarizes the thermophysical properties of each constituent, used to estimate the hybrid nanofluid’s thermophysical properties.
+	Thus, the two-dimensional steady-state continuity, X and Y momentum, energy and diffusion equations can be expressed in the dimensional form as listed below [19, 27]:
+														(1)
+						(2)
+											(4)
+											(5)
+Where  is the effective viscosity,  ρnf the density, (ρβS)nf and (ρβT)nf  are the thermal and mass expansion coefficients respectively, αnf and D are the thermal and mass diffusivity respectively of the hybrid nanofluid.
+	The density ρnf, the heat capacity (ρcp)nf and the thermal expansion coefficient (ρβ)nf of the hybrid nanofluid are calculated using respective laws of mixtures in the following way [32]:
+										(6)
+							(7)
+								(8)
+Where ϕ1 and ϕ2 are respectively, the solid volume fraction of MWCNT-MgO (15%-85%) The addition of ϕ1 and ϕ2 gives the total solid volume fraction of the nanoparticles, noted ϕ.
+	The thermal diffusivity αnf of the hybrid nanofluid is defined as:
+													(9)
+Where knf and (ρcp)nf are the thermal conductivity and heat capacity respectively of the hybrid nanofluid.
+In order to modeling the rheological comportment of the CMC/(MWCNT-MgO) mixture, an experimental correlation (Eq. (10)) recommended by Kasaeipoor et al. [17] is used to give the effective viscosity . The thermal conductivity knf of the nanofluid is also given by the experimental correlation (Eq. (11)) of Kasaeipoor et al. [17].
+
+In the expressions cited above, thedenotes the apparent viscosity of the base fluid, ϕ and T represent respectively, the total solid volume fraction (in percentage) and the temperature (in °C). These correlations are valid for the MWCNT-MgO/water hybrid nanofluid at a temperature range of 20 °C - 40 °C and a total solid volume fraction variation between 0.25% and 2%. Where the precedent temperature range and total solid volume fraction variation are an important conditions to work with these experimental correlations recommended by Kasaeipoor et al. [17] specifically for our type of nanofluid.
+In our work we consider that the base fluid obeys the rheological model of Ostwald–De Waele’s (power-law model), for which, the shear stress tensor expression is [33, 34]:
+														(12)
+Where τ* is the shear stress,  the shear rate, K the fluid’s consistency and n the power law index.
+The magnitude of the strain rate tensor for two-dimensional Cartesian coordinates, is defined as follows:
+									(13)
+In the case n = 1, the fluid is known as Newtonian, and the consistency K becomes the dynamic viscosity:
+													(14)
+Therefore, from the two equations (12) and (14), the power-law apparent viscosity for two-dimensional Cartesian coordinates are expressed as:
+													(15)
+
+It is to note that the base fluid’s physical properties are taken at the reference temperature.
+As shown in Fig. 1, the configuration is exposed to the following boundary conditions:
+Upper wall:									(17)
+Lower wall:								(18)
+Left wall:							
+									(19)
+Right wall:							
+									(20)
+Left bottom Inclined wall:									(21)
+Right bottom Inclined wall:									(22)
+
+Equations (1)-(5) are expressed in dimensionless form, by using the next non-dimensional variables [32]:
+				(23)
+Where X and Y stand for dimensionless Cartesian coordinates, U and V for dimensionless velocity components, P for dimensionless pressure, θ  and φ  for the dimensionless temperature and concentration respectively.
+
+
+Thus, the governing equations become in their dimensionless form:
+
+Where Re, Ri, Le, Pr represents the Reynolds, Richardson, Lewis and Prandtl dimensionless numbers respectively, N is the buoyancy ratio and μnf  represent the non-dimensional apparent viscosity of the nanofluid and is written as follow [17]: 
+
+
+The dimensionless numbers of Reynolds Re, Richardson Ri, Thermal Grashof , Solutal Grashof , Prandtl Pr and of Lewis Le, as well as the Buoyancy ratio N, are respectively given by the following expressions [35]:
+								
+											(31)
+
+	The stream function ψ is defined as follows [20]:
+															(32)
+															(33)
+											(34)
+
+The non-dimensional boundary conditions of the Eqs. (24)-(28) are written as:
+Upper wall:									(35)
+Lower wall:									(36)
+Left wall:						
+											(37)
+Right wall:						
+											(38)
+Left bottom Inclined wall:												(39)
+Right bottom Inclined wall:											(40)
+
+2.3. Heat and mass transfer rate
+In order to evaluate the rate of heat and mass transfer within the enclosure, the values of the total average Nusselt and Sherwood numbers are calculated using the following expressions:
+												(41)
+												(42)
+Nuavg,l, Shavg,l, Nuavg,r and Shavg,r represent, respectively, the average Nusselt and Sherwood numbers on the inclined bottom left and right hot walls. They are calculated according to the local distribution of the Nusselt and Sherwood numbers, and are given by the following equations [10]:
+							(43)
+							(44)
+The local Nusselt and Sherwood numbers in the inclined bottom left and right walls of the cavity are calculated as:
+							(45)
+									(46)
+Where n is the unit normal vector, with the inclined wall,, and
+
+3. Numerical method and validation of the computer code
+	The problem considered in this work is governed by the coupled non-linear partial differential equations, given in the dimensionless form in Eqs.(24)-(28), and their associated boundary conditions. These equations are discretized using the Finite volume method, suggested by Patankar [36]. The SIMPLER algorithm is applied to solve the problem of the pressure-velocity coupling, known as the checkerboard pressure problem [37].The hybrid diagram of interpolation is selected for the space discretization of the convective and diffusive terms of the transport equations. The algebraic equations obtained are resolved by coupling the Alternating Direction Implicit method (ADI) and the Tri Diagonal Matrix Algorithm (TDMA). The iterative process takes into consideration the pressure correction by the implementation of SIMPLER algorithm, and reached the convergence when the variation of the dependent variables (U, V, P or θ , φ ) from one iteration to another is not significant. Therefore, a stop criterion of the iterative process during convergence is imposed and is defined as follows:
+													(47)
+Where ξ  is one of U, V, P or θ and φ and σ represents the simple iteration level.
+A homemade computer code written in FORTRAN 90 language is elaborated to implement the numerical method. The results were calculated on a computer with Intel Xeon CPU W3520 2.67 GHz processor and 6GB of RAM. The domain is covered with a uniform grid, following vertical and horizontal directions, and the inclined walls of the cavity are approximated with the staircase like zigzag lines and therefore, control volumes outside the domain are supposed to be inactive, i.e., zero speed [38-40], as presented in Fig. 2.
+ 
+Table 2 groups the tests performed to analyze the sensitivity of the results to the mesh and this, for Ri = 10, n = 0.6, Gr =10000 and φ = 0.02. It appears that for a mesh of 151×151 (respectively, X and Y directions), the numerical solution is slightly influenced by the mesh size. The computation time, corresponding to the selected mesh (151×151), is of the order of 25 minutes.
+ 
+In order to verify the reliability of the developed code, we compare our results with those of the literature. In a first step, we qualitatively compared our flow structure as well as the isotherms and isoconcentrations with those obtained by Kefayati [35], for the case of a double-diffusive mixed convection of shear-thinning fluids in a lid-driven square enclosure. From Fig. 3, a great similarity is observed between the streamlines, the isotherms and the isoconcentrations, obtained by our results and those of the reference [35].
+	In addition, a quantitative validation is realized by comparing our results and those of Esfahani and Bordbar [19], who investigated numerically the double-diffusive natural convection of a nanofluid composed with water base fluid and one of the following nanoparticles Cu, Ag, Al2O3 and TiO2, in a square cavity. The comparison illustrated in Fig. 4 focuses on the distribution of the local Nusselt (a) and Sherwood (b) numbers along the heated wall for various Cu nanoparticles volume fractions. A good concordance appears clearly, according to this figure, between our results and those obtained by the authors, since the maximum gap between the two results does not exceed 2.10%.
+ 
+4. Results and discussion
+We examine, in this part, the influence of various physical parameters: the Richardson number (0.001 ≤ Ri ≤ 10), the total solid volume fraction (0% ≤ ϕ ≤ 2%), the power law index (0.2 ≤ n ≤ 1) and the buoyancy ratio (-3 ≤ N ≤ +3). In this study, the temperature is supposed equal to T = 20 °C. Moreover, the Lewis and the Prandtl numbers are fixed at 5 and 10, respectively, and the thermal Grashof number is kept at GrT = 10000.
+
+4.1. Flow structure
+We began by the analysis of the hydrodynamic, thermal and mass flow structure under the influence of the Richardson number and the power law index. Thus, Figs. 5-8 shows the streamlines, isotherms and isoconcentrations for the case of the hybrid nanofluid (φ = 0.02).
+Fig. 5 corresponds to the dominant natural convection (Ri = 10) case, where the buoyancy forces predominate the inertia forces and control the flow characteristics. The streamlines show a main clockwise recirculation cell occupying almost the entire enclosure. When the power law index rises, the shape of this cell changes from circular to elliptical and its position from the center to the upper part of the enclosure. A secondary anti-clockwise recirculation cell appears at the upper-left corner of the cavity at n = 0.2. It becomes smaller at n = 0.4 and completely disappears for n ≥ 0.6. The existence of this secondary cell is due to the thermal conditioning at this portion of the cavity. Indeed, in this region, the wall is cold and the fluid undergoes a descending flow along it, due to the buoyancy forces.
+As it has already been reported, the influence of increasing power law index on the streamlines is highlighted by the location of the streamlines cores as they move from the center to the upper of the enclosure. At the upper right part of the enclosure, the streamlines are more compressed since that at the vicinity of the driving lid, the flow intensity is more significant.
+The analysis of both isotherms and isoconcentrations shows that their structure alters by increasing the power law index. Furthermore, the impact of the augmentation of the latter consists in the decrease of the intensity of both isoconcentrations and isotherms on the concentrated and hot walls, which results in the decrease of wall concentration and temperature gradients, respectively and thus, the deterioration of mass and heat transfer inside the enclosure.
+As the inertia forces begin to manifest, this leads to a noticeable change in the flow structure. Indeed, for the mixed convection case (Ri = 1) in Fig. 6, where inertia and buoyancy forces are in balance, we note that the primary recirculation cell occupies the entire enclosure and that the secondary cell occupies a restricted space at the left upper region for n = 0.2 and disappears when n ≥ 0.4. We note also that, contrary to the dominant natural convection case (Ri = 10), as the power law index increases in this case, the streamlines move from the middle to the upper part of the enclosure and lean toward the upper-right region of the latter.
+Regarding the isotherms and the isoconcentrations, the change of power-law index influences the isotherms and the isoconcentrations as the increment of power-law index decreases the density of the isotherms and the isoconcentrations on the hot and concentrated walls. Hence, the heat and mass transfer drops with the enhancement of power-law index. which is disadvantage of heat and mass transfer in the cavity.
+It is interesting to notice that the isotherms and isoconcentrations are more concentrated at the vicinity of the hot and concentrated walls in this case than in that corresponding to a dominant natural convection (Fig. 5). In fact, it demonstrates, the distance of the isotherms and isoconcentrations from the hot and concentrated walls declines steadily with the decreases of Richardson number. We expect thus, an enhancement of heat and masse transfer compared to the case of Ri = 10, because of the increase of the wall temperature and concentration gradients on behalf of the increase of inertia and thus, the forced convection strength.
+As the inertia forces intensify to the detriment of the buoyancy forces, the dominant forced convection becomes the primary mechanism of heat transfer. So, Fig. 7 and Fig. 8 show the influence of the power law index variation on the flow structure when Ri = 0.01 and Ri = 0.001, respectively. In this case, the primary clockwise recirculation cell takes up the center of the cavity whatever the value of the power law index. As for the streamlines, they are oriented toward the lid driven upper wall direction. At the cold part of the left wall, there is no appearance of the secondary anti-clockwise recirculation cell for Ri = 0.01; the streamlines detach from this part of the left wall, this detaching diminishes as the power law index increases. However, for Ri = 0.001, we notice the appearance of the secondary cell at the proximity of the left cold wall, from a power law index n = 0.4. This can be due to the importance of the translation velocity of the upper lid wall compared to the case Ri = 0.01.
+The isotherms and isoconcentrations become more confined at the hot and concentrated walls as the Richardson number decreases from 0.01 to 0.001, compared to the previous cases (Ri = 10, 1). Contrary to the previous cases, the heat and mass transfer enhances in the cases of (Ri = 0.01, 0.001), by the increase of the power law index. At Ri = 0.01, the increase in the power-law index alters the movement of the isotherms and isoconcentrations evidently in the cavity. Furthermore, their density on the hot and concentrated walls ameliorates which results in increasing the gradient temperature and concentration on the hot and concentrated walls. Therefore, it demonstrates the augmentation of heat and mass transfer by the power-law index enhancement. At Ri = 0.001, it is clear the rise of the power-law index enhances the gradient of the isotherms and isoconcentrations on the hot and concentrated walls and this trend demonstrates that the enhancement of the power-law index augments the heat and mass transfer considerably. As the Richardson number increases from Ri = 0.001 to 0.01, the effect of the forced convection drops and the influence of the natural convection is more highlighted in the mixed convection. However, the enhancement of the gradients of the isotherms and isoconcentrations by the increases in the power-law index is less than the Ri = 0.001. It is interesting to note also that because of the direction of the translation movement of the upper wall, both isotherms and isoconcentrations are fasten on the right cold wall while they are detached from the left one.
+4.2. Vertical velocity component profile
+	To analyze the hydrodynamic comportment of the flow within the enclosure, we present in Fig. 9 and Fig. 10, the vertical velocity component profile at Y = 0.15, for various Richardson number values and for n = 0.4 (Fig. 9) and for different power law index values by taking Ri = 1 (Fig. 10).
+We can notice from Fig. 9 that the greatest magnitude of the uphill vertical velocity component is for Ri = 10 where the natural convection predominate. For the same reason, the greatest values of this velocity correspond to the ascending flow (V > 0). However, the greatest magnitude of the downhill vertical velocity component is for Ri = 0.01. It is interesting to note also that as the inertia forces manifest, i.e. for Ri = 1, 0.01 and 0.001, the values of the velocity are more important in the descending flow region (V < 0). In this case, the velocity profiles are more adjacent to the wall, especially for Ri = 0.01 and Ri = 0.001 because of the direction of translation movement of the upper wall.
+Fig. 10 displays that the rise of the power law index decreases significantly the magnitude of the vertical velocity component. An observation which is in according with the streamlines of Fig. 6 which indicate that the fluid flow weakens when the power law index increases.
+
+4.3. Heat and mass transfer rates
+In order to quantify both heat and mass transfer in the cavity, we present in Figs 11 and 12, the evolution of the local Nusselt and Sherwood numbers along the left and right inclined hot walls, respectively, for different Richardson number and power law index values.
+We note from Fig. 11, that both the Nusselt and Sherwood numbers decrease along the inclined left wall for the cases of mixed and dominant natural convection (Ri = 1, 10), going through more or less accentuated maxima according to the power law index value. The Nusselt number evolution exhibits a light increase at the proximity of the vertical adiabatic left wall. For the dominant forced convection case (Ri = 0.01, 0.001), an increase of the Nusselt and Sherwood numbers is observed at the beginning of the inclined wall. This increase is then followed by a decrease as we approach the vertical left wall. At (Ri = 0.01, 0.001) The local Nusselt and Sherwood numbers increases slightly with the rise of the power-law index while it has curved behavior. In addition, it demonstrates that the maximum value of the local Nusselt and Sherwood numbers in different power-law indexes is obtained at 0.1 < S < 0.2. Moreover, it shows that the local Nusselt and Sherwood numbers plunges at S ⩾ 0.2. This behavior can be due to the great intensity of the inertia forces compared to the buoyancy forces, which offer a best brewing of the fluid in the right region of this inclined wall and thus, the increase of both wall temperature and concentration gradients.
+As seen previously in both isotherms and isoconcentrations, the local Nusselt and Sherwood numbers increase overall with the decrease of the Richardson number, as it is attributed to the enhancement of the forced convection. Therefore, the convection process for heat and mass transfer becomes weaker with the increase in Richardson number.
+In addition, for mixed and dominant natural convection cases (Ri = 1, 10), the rise of the power law index lead to decrease both mass and heat transfer rates. However, for the dominant forced convection and only at Ri = 0.001 where the inertia forces are more important, mass and heat transfer are enhanced, since that the brewing of the fluid at the proximity of the active walls is more significant in this configuration.
+Regarding the right inclined wall (Fig. 12), a different behavior is noticed. Indeed, for the mixed and the dominant natural convection, the Nusselt and Sherwood numbers increase along the wall since that the fluid is heated and concentrated as it flows along this wall. As the inertia forces intensify at the detriment of the buoyancy forces, the wall temperature and concentration gradients increase under the impact of the translation motion of the upper wall, then decrease as we approach the vertical adiabatic wall. Furthermore, the places of the maximum values of the local Nusselt and Sherwood numbers are different for various Richardson numbers. It is interesting to note also that the local Nusselt and Sherwood numbers increases significantly with the decline of Richardson number as it is attributed to the enhancement of the forced convection.
+To sum up the obtained results and to investigate the increase or the decrease of heat and mass transfer rates within the cavity, we present in Figs 13 and 14, the evolution of both the average Nusselt and Sherwood numbers according to the nanoparticles volume fraction and for several values of the power law index and buoyancy ratio, respectively. These abacuses take into account the various convection modes considered in this study.
+We can see from Fig. 13 that, as expected, when the Richardson number decreases, both mass and heat transfer are enhancing, i.e. these exchanges are promoted when the inertia forces predominate the process. Indeed, these forces manage to put more fluid in motion, so that its exchanges with the active walls in contact become more intense.
+In addition, we note that the heat and mass transfer enhance by the rising of the power law index, for the dominant forced convection at Ri = 0.001 on one hand and to their decrease for mixed and dominant natural convection (Ri = 1, 10) on the other side. However, for the dominant forced convection at Ri = 0.01, mass transfer is improved whereas heat transfer is declined when the power law index rises.
+Regarding the effect of the insertion of the hybrid nanoparticles to the power law base fluid, the results show that the increase of the nanoparticles volume fraction (from ϕ = 0 to ϕ = 0.02) enhances heat transfer for all the convection modes. It explicated by the rise of the thermal conductivity and thermal diffusivity of the nanofluid as the solid volume fraction increases. However, a various comportment is noticed for the mass transfer. Indeed, the mass exchange in the cavity improved by the increase of the nanoparticles volume fraction, when the inertia forces predominate, i.e. at Ri = 0.001 and Ri = 0.01 and disadvantages it, overall, for the mixed and dominant natural convection (Ri = 1, 10). Moreover, it displays that the heat transfer increases with the enhancement of volume fraction for various power-law indexes. However, the effect of nanoparticles on the increase in heat transfer is different for various power-law indexes and Richardson numbers.
+In order to quantify these results for the dominant forced convection where more heat and mass rates are obtained (Ri = 0.001), we group in Table 3 and Table 4, respectively, the gap of both the average Nusselt and Sherwood numbers from the base fluid (ϕ = 0) and for different power law index values. As it can be seen, the best enhancement of heat and mass transfer are obtained for the case n = 0.8, ϕ = 0.02.
+In Fig.14, shows the effect of buoyancy ratio on the average Nusselt and Sherwood numbers for different nanoparticle volume fractions and Richardson numbers. we can see, first of all, that for Ri = 1 and Ri = 10, the increase of the buoyancy ratio in absolute value leads to the decrease and the increase of the Nusselt and Sherwood numbers, respectively, when the buoyancies are cooperating and to the increase of both of them when the buoyancies are opposite. At Ri = 1 and Ri = 10 there is an ascending trend for the average Nusselt number with increasing nanoparticles volume fraction and for different buoyancy ratio, and the average Sherwood number rises at N = +2, +3, and it decreases at N = 0, +1, -1, -2, -3 by the rising of the nanoparticles volume fraction.
+	We observed that, regardless the value of the Richardson number, the average Nusselt and Sherwood numbers are improved by the increase of the nanoparticles volume fraction for the considered of the buoyancy ratio values, except for the cases of mixed and dominant natural convection (Ri = 1, 10) when the buoyancy ratio N = 0, 1, -1, -2, -3, where the average Sherwood number decreases as the nanoparticles volume fraction rises. This is due to the fact that the mass and thermal buoyancies are opposing; which is to the disadvantage of the mass transfer. At Ri= 0.01 and 0.001, there is an ascending trend for the average Nusselt and Sherwood numbers with increasing nanoparticles volume fraction for various buoyancy ratio. In addition, it can be seen that the average Nusselt and Sherwood numbers increases by decreasing the Richardson number.
+It is interesting to note also that the effect of the buoyancy ratio is more important when dealing with a mixed convection (Ri = 1). This effect becomes smaller for the dominant forced convection where the average Nusselt and Sherwood numbers become insensitive to its variation. This can be attributed to the predominance of the inertia forces to the detriment of the buoyancy one. In addition, these variations are more important for the cooperating case (N > 0), for Ri =1 and Ri = 10, since the mass and thermal buoyancies act in the same direction.
+
+5. Conclusion
+In this work, thermosolutal mixed convection of MWCNT-MgO (15%-85%)/CMC hybrid nanofluid in a lid-driven irregular hexagon cavity was studied numerically applying the finite volume method. Empirical relations were employed to predict the nanofluid’s thermophysical properties. This study focused on the influence of the Richardson number, the power law index, the buoyancy ratio as well as the total solid volume fraction, on the hydrodynamic, thermal and mass characteristics of the flow within the enclosure. The obtained results allow to draw the following main conclusions:
+-	The structure of the streamlines, isotherms and iso-concentrations within the cavity depend significantly upon the power law index and the Richardson number.
+-	The greater variation in the vertical velocity component profile is observed for lower values of the power law index.
+-	Heat and mass transfer are enhanced with the decrease of the Richardson number for the different values of the power law index and buoyancy ratio.
+-	The rise of the power law index decreases mass and heat transfer for both mixed and dominant natural convection (Ri = 1, 10) while for the dominant forced convection, the heat transfer decreases and mass transfer increases for Ri = 0.01 both mass and heat transfer increases for Ri = 0.001.
+-	The effect of the nanoparticles volume fraction is more significant on heat transfer for the shearthinning nanofluid compared to the limit case of a Newtonian fluid (n = 1).
+-	The insertion of nanoparticles improves heat transfer regardless the values of the power law index, the buoyancy ratio and the Richardson number. The maximum improvement is obtained for Ri = 0.001 at n = 0.8, ϕ = 0.02.
+-	The addition of nanoparticles enhances mass transfer whatever the value of the power law index and the buoyancy ratio for the case of a dominant forced convection (Ri = 0.01, 0.001) and decreases it for the case of mixed and dominant natural convection (Ri = 1, 10), except for N = 2, 3, where the mass transfer increases.
+
+As an extension to this work, we suggest changing the type of base fluid with another non-Newtonian fluid, studied non-Newtonian behavior, and analyzing the effect of all physical parameters. It would also be interesting to test another combination and percentage of nanoparticles to investigate in more details of the hybrid nanofluid.
+References
+[1] Aghaei A, Khorasanizadeh H, Sheikhzadeh G, Abbaszadeh M. Numerical study of magnetic field on mixed convection and entropy generation of nanofluid in a trapezoidal enclosure. J Magn Magn Mater. 2016; 403:133–145. https://doi.org/10.1016/j.jmmm.2015.11.067.
+[2] Tsai CY, Chien HT, Ding PP, Chan B, Luh TY, Chen PH. Effect of structural character of gold nanoparticles in nanofluid on heat pipe thermal performance. Mater Lett. 2004; 58:1461–1465. https://doi.org/10.1016/j.matlet.2003.10.009.
+[3] Tzeng SC, Lin CW, Huang KD. Heat transfer enhancement of nanofluids in rotary blade coupling of four-wheel-drive vehicles. Acta Mech. 2005; 179: 11–23. https://.doi.org/10.1007/s00707-005-0248-9.
+[4] Jordan A, Scholz R, Wust P, Fahling H, Felix R. Magnetic fluid hypothermia (MFH): cancer treatment with AC magnetic field induced excitation of biocompatible super paramagnetic nanoparticles. J Magn Magn Mater. 1999; 201:413–419. https://doi.org/10.1016/S0304-8853(99)00088-8.
+[5] Sundar LS, Sharma KV, Naik MT, Singh MK. Empirical and theoretical correlations on viscosity of nanofluids: a review. Renew Sustain Energy Rev. 2013; 25:670–686. https://doi.org/10.1016/j.rser.2013.04.003.
+[6] Hoseinzadeh S, Sahebi SAR, Ghasemiasl R, Majidian AR. Experimental analysis to improving thermosyphon (TPCT) thermal efficiency using nanoparticles/based fluids (water). Eur Phys J Plus. 2017; 132: 197. https://doi.org/10.1140/epjp/i2017-11455-3.
+[7] Hoseinzadeh S, Chamkha A J. Numerical investigation of rectangular thermal energy storage units with multiple phase change materials. J Mol Liq. 2018; https:// dx.doi.org /10.1016/j.molliq.2018.08.128.
+[8] Hoseinzadeh S, Heyns PS, Chamkha A J, Shirkhani A, Thermal analysis of porous fins enclosure with the comparison of analytical and numerical methods. J Therm Anal Calorim. 2019; 138: 727–735. https://doi.org/10.1007/s10973-019-08203-x.
+[9] Hoseinzadeh S, Moafi A, Shirkhani A, Chamkha A J. Numerical validation heat transfer of rectangular cross-section porous fins. J Thermophys Heat Tr. https://doi.org/10.2514/1.T5583.
+[10] Ouyahia S-E, Benkahla YK, Labsi N. Numerical study of the hydrodynamic and thermal proprieties of titanium dioxide nanofluids trapped in a triangular geometry. Arab J Sci Eng. 2016; 41:1995–2009. https://doi.org/ 10.1007/s13369-016-2055-0.
+[11]. Selimefendigil F, Oztop HF. Conjugate mixed convection of nanofluid in a cubic enclosure separated with a conductive plate and having an inner rotating cylinder. Int J Heat Mass Transf. 2019; 139: 1000-1017. https://doi.org/10.1016/j.ijheatmasstransfer.2019.05.053.
+[12] Benzema M, Benkahla YK, Ouyahia S-E. Rayleigh-Bénard MHD convection of Al2O3–water nanofluid in a square enclosure: magnetic field orientation effect. Energy procedia. 2017; 139:198–203. https://doi.org/10.1016/j.egypro.2017.11.196.
+[13] Boutra A, Ragui K, Bennacer R, Benkahla YK. Free convection heat transfer of nanofluids into cubical enclosures with a bottom heat source: lattice boltzmann application. Energy procedia. 2017; 139:217–223. https://doi.org/10.1016/j.egypro.2017.11.199.
+[14] Selimefendigil F, Oztop HF. Magnetic field effects on the forced convection of CuO-water nanofluid flow in a channel with circular cylinders and thermal predictions using ANFIS. Int J Mech Sci. 2018; 146–147: 9–24. https://doi.org/10.1016/j.ijmecsci.2018.07.011.
+[15] Selimefendigil F, Oztop HF. Fluid-solid interaction of elastic-step type corrugation effects on the mixed convection of nanofluid in a vented cavity with magnetic field. Int J Mech Sci. 2019; 152: 185–197. . https://doi.org/10.1016/j.ijmecsci.2018.12.044.
+[16] Sidik NAC, Adamu IM, Jamil MM, Kefayati GHR, Mamat R, Najafi G. Recent progress on hybrid nanofluids in heat transfer applications: a comprehensive review. Int Commun Heat Mass Transf. 2016; 78:68–79. http://dx.doi.org/10.1016/j.icheatmasstransfer.2016.08.019.
+[17] Kasaeipoor A, Malekshah EH, Kolsi L. Free convection heat transfer and entropy generation analysis of MWCNT-MgO (15% - 85%)/water nanofluid using Lattice Boltzmann method in cavity with refrigerant solid body-experimental thermo physical properties. Powder Technol. 2017; 322:9–23. http://dx.doi.org/10.1016/j.powtec.2017.08.061.
+[18] Kalidasan K, Velkennedy R, Rajesh Kanna P. Laminar natural convection of Copper - Titania/water hybrid nanofluid in an open ended C - shaped enclosure with an isothermal block. J Mol Liq. 2017; 246:251–258. https://doi.org/10.1016/j.molliq.2017.09.071.
+[19] Esfahani JA, Bordbar V, Double diffusive natural convection heat transfer enhancement in a square enclosure using nanofluids. J Nanotechnol Eng Med. 2011; 2:021002–2. https://doi.org/10.1115/1.4003794.
+[20] Abbasian Arani AA, Ababaei A, Sheikhzadeh GA, Aghaei A. Numerical simulation of double-diffusive mixed convection in an enclosure filled with nanofluid using Bejan’s heatlines and masslines. Alex Eng J. 2018; 57:1287–1300. https://doi.org/10.1016/j.aej.2017.03.034.
+[21] Parvin S, Nasrin R, Alim M, Hossain N. Double diffusive natural convective flow characteristics in a cavity. Proc Eng. 2013; 56:480–488. https://doi.org/10.1016/j.proeng.2013.03.150.
+[22] Wang L, Chai Z, Shi B. Regularized lattice Boltzmann simulation of double-diffusive convection of power-law nanofluids in rectangular enclosures. Int J Heat Mass Transf. 2016; 102:381–395.
+https://doi.org/10.1016/j.ijheatmasstransfer.2016.06.041.
+[23] Kefayati GHR. Mixed convection of non-Newtonian nanofluid in an enclosure using Buongiorno’s mathematical model. Int J Heat Mass Transf. 2017; 108: 1481–1500.
+http://dx.doi.org/10.1016/j.ijheatmasstransfer.2016.12.103.
+[24] Kefayati GHR. Mesoscopic simulation of mixed convection on non-Newtonian nanofluids in a two sided lid-driven enclosure. Adv Powder Technol. 2015; 26:576–588. http://dx.doi.org/10.1016/j.apt.2015.01.005.
+[25] Baheri Islami S, Dastvareh B, Gharraei R. An investigation on the hydrodynamic and heat transfer of nanofluid flow, with non-Newtonian base fluid, in micromixers. Int J Heat Mass Transf. 2014; 78:917–929. http://dx.doi.org/10.1016/j.ijheatmasstransfer.2014.07.022.
+[26] Selimefendigil F, Chamkha A J. Magnetohydrodynamics mixed convection in a power law nanofluid-filled triangular cavity with an opening using Tiwari and Das’nanofluid model. J Therm Anal Calorim. 2019; 135: 419–436. https://doi.org/10.1007/s10973-018-7037-x.
+[27] Ouyahia S-E, Benkahla YK, Berabou W, Boudiaf A. Numerical study of the flow in a square cavity filled with Carbopol-TiO2 nanofluid. Powder Technol. 2017; 311: 101–111. http://dx.doi.org/10.1016/j.powtec.2017.01.026.
+[28] Kefayati GHR. FDLBM simulation of mixed convection in a lid-driven cavity filled with non-Newtonian nanofluid in the presence of magnetic field. Int J Therm Sci. 2015; 95: 29–46. http://dx.doi.org/10.1016/j.ijthermalsci.2015.03.018.
+[29] Kefayati GHR. FDLBM simulation of magnetic field effect on mixed convection in a two sided lid-driven cavity filled with non-Newtonian nanofluid. Powder Technol. 2015; 280: 135–153. http://dx.doi.org/10.1016/j.powtec.2015.04.057.
+[30] Kefayati GHR. Mixed convection of non-Newtonian nanofluids flows in a lid-driven enclosure with sinusoidal temperature profile using FDLBM. Powder Technol. 2014; 266: 268–281.
+https://doi.org/10.1016/j.powtec.2014.06.040.
+[31] Ternik P, Rudolf R. Laminar natural convection of non-newtonian nanofluids in a square enclosure with differentially heated side walls. Int J Simul Model. 2013; 12:5–16. https://doi.org/10.2507/IJSIMM12(1)1.215.
+[32] Benzema M, Benkahla YK, Labsi N, Ouyahia S-E, El Ganaoui M. Second law analysis of MHD mixed convection heat transfer in a vented irregular cavity filled with Ag-MgO/water hybrid nanofluid. J Therm Anal Calorim. 2019; 137:1113–1132. https://doi.org/10.1007/s10973-019-08017-x.
+[33] Sofou S, Mitsoulis E. Calendering of pseudoplastic and viscoplastic sheets of finite thickness. J Plast Film Sheeting. 2004, 20:185-222
+[34] Mitsoulis E, Sofou S. Calendering pseudoplastic and viscoplastic fluids with slip at the roll surface. J Appl Mech. 2006, 73: 291-299
+[35] Kefayati GHR. Double-diffusive mixed convection of pseudoplastic fluids in a two sided lid-driven cavity using FDLBM. J Taiwan Inst Chem Eng. 2014; 45:2122–2139. https://doi.org/10.1016/j.jtice.2014.05.026.
+[36] Patankar SV. Numerical Heat Transfer and Fluid Flow. McGraw-Hill. New York; 1980.
+[37] Hosseinzadeh S, Ostadhossein R, Mirshahvalad H.R, Seraj J. Using simpler algorithm for cavity flow problem. Mechatronics and Applications: An International Journal. 2017; 1: 1.
+[38] Mahmoudi AH, Pop I, Shahi M, Talebi F. MHD natural convection and entropy generation in a trapezoidal enclosure using Cu-water nanofluid. Comput Fluids. 2013; 72:46–62. https://doi.org/10.1016/j.compfluid.2012.11.014.
+[39] Aminossadati SM. Hydromagnetic natural cooling of a triangular heat source in a triangular cavity with water-CuO nanofluid. Int Commun Heat Mass Transf. 2013; 43:22–29.
+https://doi.org/10.1016/j.icheatmasstransfer.2013.02.009.
+[40] Ghasemi B, Aminossadati SM. Brownian motion of nanoparticles in a triangular enclosure with natural convection. Int J Therm Sci. 2010; 49:931–940. https://doi.org/10.1016/j.ijthermalsci.2009.12.017.
